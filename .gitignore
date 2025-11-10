@@ -1,2 +1,6 @@
 *.html
 !template.html
+.vercel
+.idea
+.next
+node_modules

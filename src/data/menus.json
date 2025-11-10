@@ -1,0 +1,63 @@
+{
+  "parties": [
+    {
+      "id": "annas_birthday_2025",
+      "title": "Anna's Birthday Dinner",
+      "date": "November 2025",
+      "schedule": [
+        {
+          "time": "19:00",
+          "activity": "Guest Arrival & Welcome Drinks"
+        },
+        {
+          "time": "19:30",
+          "activity": "Dinner Begins"
+        },
+        {
+          "time": "21:00",
+          "activity": "Party Games"
+        },
+        {
+          "time": "22:30",
+          "activity": "Dessert Service"
+        },
+        {
+          "time": "23:15",
+          "activity": "Depart for Club"
+        }
+      ],
+      "courses": [
+        {
+          "name": "Aperitif",
+          "dish": "Oysters Rockefeller",
+          "description": "Fresh oysters, spinach, parmesan, anise liqueur"
+        },
+        {
+          "name": "Soup",
+          "dish": "Lobster Bisque",
+          "description": "Cognac, cream, tarragon"
+        },
+        {
+          "name": "Entrée",
+          "dish": "Duck Confit",
+          "description": "Crispy duck leg, orange gastrique, microgreens"
+        },
+        {
+          "name": "Main Course",
+          "dish": "Venison Wellington",
+          "description": "Herb-crusted venison loin, wild mushroom duxelles, port wine sauce"
+        },
+        {
+          "name": "Side",
+          "dish": "Gratin Dauphinois",
+          "description": "Thinly sliced potatoes, cream, garlic, gruyère"
+        },
+        {
+          "name": "Dessert",
+          "dish": "Chocolate Fondant",
+          "description": "Molten chocolate cake, vanilla bean ice cream"
+        }
+      ]
+    }
+  ]
+}
