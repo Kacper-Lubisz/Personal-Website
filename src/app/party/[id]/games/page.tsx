@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import partiesData from "@/data/menus.json";
-import { Clock } from "@phosphor-icons/react/dist/ssr";
+import { GameController, Clock } from "@phosphor-icons/react/dist/ssr";
 import OverrideTitle from "@/components/OverrideTitle";
 import PreserveParamsLink from "@/components/PreserveParamsLink";
 
-interface Course {
+interface Game {
   name: string;
-  dish: string;
   description: string;
 }
 
@@ -15,7 +14,7 @@ interface Party {
   title: string;
   date: string;
   releaseDate: string;
-  courses: Course[];
+  games: Game[];
 }
 
 export async function generateStaticParams() {
@@ -43,7 +42,7 @@ function isContentAvailable(releaseDate: string, override?: string): boolean {
   return today >= release;
 }
 
-export default async function MenuPage({
+export default async function GamesPage({
   params,
   searchParams,
 }: {
@@ -53,14 +52,14 @@ export default async function MenuPage({
   const { id } = await params;
   const { override } = await searchParams;
 
-  const menu = partiesData.parties.find((m) => m.id === id);
+  const party = partiesData.parties.find((p) => p.id === id);
 
-  if (!menu) {
+  if (!party) {
     notFound();
   }
 
   const isAvailable = isContentAvailable(
-    menu.releaseDate,
+    party.releaseDate,
     override as string | undefined
   );
 
@@ -70,14 +69,15 @@ export default async function MenuPage({
         <div className="w-full md:max-w-2xl">
           <div className="flex flex-col p-8 md:p-12">
             <header className="text-center mb-8 border-b-2 border-current pb-6">
-              <OverrideTitle>
-                <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                  {menu.title}
+              <OverrideTitle className="flex items-center justify-center gap-3 mb-2">
+                <GameController size={40} weight="regular" />
+                <h1 className="text-4xl md:text-5xl font-bold">
+                  {party.title}
                 </h1>
               </OverrideTitle>
-              <p className="text-lg md:text-xl opacity-70">{menu.date}</p>
+              <p className="text-lg md:text-xl opacity-70">{party.date}</p>
               <p className="text-base mt-2 uppercase tracking-wider opacity-60">
-                Food Menu
+                Party Games
               </p>
             </header>
 
@@ -86,8 +86,8 @@ export default async function MenuPage({
                 <Clock size={64} weight="regular" className="mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Not Available Yet</h2>
                 <p className="text-lg opacity-70 mb-6">
-                  The menu will be available on{" "}
-                  {new Date(menu.releaseDate).toLocaleDateString("en-US", {
+                  The games will be revealed on{" "}
+                  {new Date(party.releaseDate).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
@@ -112,23 +112,24 @@ export default async function MenuPage({
       <div className="w-full md:max-w-2xl md:shadow-2xl print:shadow-none print:max-w-none md:aspect-[1/1.414] print:min-h-screen">
         <div className="flex flex-col p-8 md:p-12 md:h-full md:overflow-y-auto print:overflow-visible print:min-h-screen">
           <header className="text-center mb-8 border-b-2 border-current pb-6">
-            <OverrideTitle>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                {menu.title}
+            <OverrideTitle className="flex items-center justify-center gap-3 mb-2">
+              <GameController size={40} weight="regular" />
+              <h1 className="text-4xl md:text-5xl font-bold">
+                {party.title}
               </h1>
             </OverrideTitle>
-            <p className="text-lg md:text-xl opacity-70">{menu.date}</p>
+            <p className="text-lg md:text-xl opacity-70">{party.date}</p>
+            <p className="text-base mt-2 uppercase tracking-wider opacity-60">
+              Party Games
+            </p>
           </header>
 
-          <div className="md:flex-1 print:flex-1 space-y-6">
-            {menu.courses.map((course, index) => (
-              <div key={index} className="space-y-1">
-                <h2 className="text-sm uppercase tracking-widest opacity-60">
-                  {course.name}
-                </h2>
-                <h3 className="text-xl md:text-2xl font-bold">{course.dish}</h3>
-                <p className="text-sm md:text-base opacity-75 italic">
-                  {course.description}
+          <div className="md:flex-1 print:flex-1 space-y-8">
+            {party.games.map((game, index) => (
+              <div key={index} className="border-2 border-current p-6 space-y-3">
+                <h2 className="text-2xl md:text-3xl font-bold">{game.name}</h2>
+                <p className="text-base md:text-lg leading-relaxed">
+                  {game.description}
                 </p>
               </div>
             ))}
@@ -143,7 +144,7 @@ export default async function MenuPage({
                 Back to Party
               </PreserveParamsLink>
             </div>
-            <p className="text-sm opacity-50">Bon Appétit</p>
+            <p className="text-sm opacity-50">Let the games begin!</p>
           </footer>
         </div>
       </div>
