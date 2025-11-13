@@ -59,7 +59,7 @@ export default async function DrinksPage({
 
   const party = partiesData.parties.find((p) => p.id === id);
 
-  if (!party) {
+  if (!party || !("drinks" in party)) {
     notFound();
   }
 
@@ -119,9 +119,7 @@ export default async function DrinksPage({
           <header className="text-center mb-8 border-b-2 border-current pb-6">
             <OverrideTitle className="flex items-center justify-center gap-3 mb-2">
               <Wine size={40} weight="regular" />
-              <h1 className="text-4xl md:text-5xl font-bold">
-                {party.title}
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold">{party.title}</h1>
             </OverrideTitle>
             <p className="text-lg md:text-xl opacity-70">{party.date}</p>
             <p className="text-base mt-2 uppercase tracking-wider opacity-60">
@@ -129,25 +127,25 @@ export default async function DrinksPage({
             </p>
           </header>
 
-          <div className="md:flex-1 print:flex-1 space-y-8">
-            {party.drinks.map((category, index) => (
-              <div key={index} className="space-y-4">
-                <h2 className="text-2xl font-bold border-b border-current pb-2">
-                  {category.category}
-                </h2>
-                <div className="space-y-3">
-                  {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="space-y-1">
-                      <h3 className="text-xl font-bold">{item.name}</h3>
-                      <p className="text-sm md:text-base opacity-75 italic">
-                        {item.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/*<div className="md:flex-1 print:flex-1 space-y-8">*/}
+          {/*  {party.drinks.map((category, index) => (*/}
+          {/*    <div key={index} className="space-y-4">*/}
+          {/*      <h2 className="text-2xl font-bold border-b border-current pb-2">*/}
+          {/*        {category.category}*/}
+          {/*      </h2>*/}
+          {/*      <div className="space-y-3">*/}
+          {/*        {category.items.map((item, itemIndex) => (*/}
+          {/*          <div key={itemIndex} className="space-y-1">*/}
+          {/*            <h3 className="text-xl font-bold">{item.name}</h3>*/}
+          {/*            <p className="text-sm md:text-base opacity-75 italic">*/}
+          {/*              {item.description}*/}
+          {/*            </p>*/}
+          {/*          </div>*/}
+          {/*        ))}*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*  ))}*/}
+          {/*</div>*/}
 
           <footer className="mt-8 pt-6 border-t border-current text-center space-y-4">
             <div className="print:hidden">

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville } from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import "./globals.css";
 
-const libreBaskerville = Libre_Baskerville({
+const courierPrime = Courier_Prime({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-libre-baskerville",
+  variable: "--font-courier-prime",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${libreBaskerville.variable} antialiased font-serif`}>
+      <body className={`${courierPrime.className} antialiased`}>
         {children}
       </body>
     </html>

@@ -3,25 +3,37 @@ import partiesData from "@/data/menus.json";
 import {
   ForkKnife,
   Clock,
-  Wine,
   Camera,
   CalendarBlank,
   CakeIcon,
   DressIcon,
   GameController,
+  MapPin,
 } from "@phosphor-icons/react/dist/ssr";
 import OverrideTitle from "@/components/OverrideTitle";
 import PreserveParamsLink from "@/components/PreserveParamsLink";
 
-interface Party {
+type ScheduleItem = {
+  time: string;
+  activity: string;
+  hideUntilReleased: boolean;
+};
+
+type Party = {
   id: string;
   title: string;
   date: string;
   releaseDate: string;
   photoAlbumUrl: string;
   dressCode: string;
+  location?: {
+    name: string;
+    address: string;
+    googleMapsUrl: string;
+  };
   welcomeMessage: string;
-}
+  schedule: ScheduleItem[];
+};
 
 export async function generateStaticParams() {
   return partiesData.parties.map((party) => ({
@@ -46,11 +58,14 @@ export async function generateMetadata({
     };
   }
 
-  const formattedDate = new Date(party.releaseDate).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const formattedDate = new Date(party.releaseDate).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
 
   return {
     title: party.title,
@@ -105,7 +120,6 @@ export default async function PartyMainPage({
       <main className="w-full max-w-4xl">
         <header className="text-center mb-12 border-b-2 border-current pb-8">
           <OverrideTitle className="flex items-center justify-center gap-3 mb-4">
-            <CakeIcon size={48} weight="regular" />
             <h1 className="text-5xl md:text-6xl font-bold">{party.title}</h1>
           </OverrideTitle>
           <p className="text-xl md:text-2xl opacity-70">{party.date}</p>
@@ -117,21 +131,66 @@ export default async function PartyMainPage({
             <div className="text-center">
               <p className="text-lg leading-relaxed">{party.welcomeMessage}</p>
             </div>
-            <div className="flex items-center justify-center gap-3 pt-4 border-t border-current">
-              <DressIcon size={32} weight="regular" />
-              <div>
-                <p className="text-sm uppercase tracking-wider opacity-60">
-                  Dress Code
-                </p>
-                <p className="text-xl font-bold">{party.dressCode}</p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 pt-4 border-t border-current">
+              <div className="flex items-center gap-3">
+                <DressIcon size={32} weight="regular" />
+                <div>
+                  <p className="text-sm uppercase tracking-wider opacity-60">
+                    Dress Code
+                  </p>
+                  <p className="text-xl font-bold">{party.dressCode}</p>
+                </div>
               </div>
+              {party.location && (
+                <a
+                  href={party.location.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:opacity-60 transition-opacity"
+                >
+                  <MapPin size={32} weight="regular" />
+                  <div>
+                    <p className="text-sm uppercase tracking-wider opacity-60">
+                      Location
+                    </p>
+                    <p className="text-xl font-bold">
+                      {party.location.name} <span className="text-base">ⓘ</span>
+                    </p>
+                  </div>
+                </a>
+              )}
+              {party.schedule && party.schedule.length > 0 && (
+                <a
+                  href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                    party.title
+                  )}&dates=${party.releaseDate.replace(/-/g, "")}T${party.schedule[0].time.replace(":", "")}00/${party.releaseDate.replace(/-/g, "")}T${party.schedule[party.schedule.length - 1].time.replace(":", "")}00&details=${encodeURIComponent(
+                    party.welcomeMessage
+                  )}&location=${encodeURIComponent(
+                    party.location?.address || party.location?.name || ""
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:opacity-60 transition-opacity"
+                >
+                  <Clock size={32} weight="regular" />
+                  <div>
+                    <p className="text-sm uppercase tracking-wider opacity-60">
+                      Arrival Time
+                    </p>
+                    <p className="text-xl font-bold">
+                      {party.schedule[0].time}{" "}
+                      <span className="text-base">ⓘ</span>
+                    </p>
+                  </div>
+                </a>
+              )}
             </div>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {/* Schedule - Full Width */}
+            {/* Schedule */}
             <PreserveParamsLink
               href={`/party/${party.id}/schedule`}
-              className="border-2 border-current p-8 hover:opacity-60 transition-opacity group md:col-span-2"
+              className="border-2 border-current p-8 hover:opacity-60 transition-opacity group"
             >
               <Clock
                 size={48}
@@ -164,30 +223,6 @@ export default async function PartyMainPage({
               <div className="border-2 border-current border-dashed p-8 opacity-40">
                 <ForkKnife size={48} weight="regular" className="mb-4" />
                 <h2 className="text-3xl font-bold mb-2">Food Menu</h2>
-                <p className="text-lg opacity-70">Coming soon</p>
-              </div>
-            )}
-
-            {/* Drinks Menu */}
-            {isAvailable ? (
-              <PreserveParamsLink
-                href={`/party/${party.id}/drinks`}
-                className="border-2 border-current p-8 hover:opacity-60 transition-opacity group"
-              >
-                <Wine
-                  size={48}
-                  weight="regular"
-                  className="mb-4 group-hover:scale-110 transition-transform"
-                />
-                <h2 className="text-3xl font-bold mb-2">Drinks Menu</h2>
-                <p className="text-lg opacity-70">
-                  Explore our beverage selection
-                </p>
-              </PreserveParamsLink>
-            ) : (
-              <div className="border-2 border-current border-dashed p-8 opacity-40">
-                <Wine size={48} weight="regular" className="mb-4" />
-                <h2 className="text-3xl font-bold mb-2">Drinks Menu</h2>
                 <p className="text-lg opacity-70">Coming soon</p>
               </div>
             )}

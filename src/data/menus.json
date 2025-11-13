@@ -7,7 +7,12 @@
       "releaseDate": "2025-11-22",
       "photoAlbumUrl": "",
       "dressCode": "Black Tie",
-      "welcomeMessage": "You are cordially invited to celebrate Anna's birthday with an evening of fine dining, delightful company, and unforgettable memories. We have prepared a special menu and entertainment for your enjoyment. Please arrive on time and dress to impress. We look forward to celebrating this special occasion with you!",
+      "location": {
+        "name": "Le Château de Wandsworth",
+        "address": "43 Beacon Tower, 1 Spectrum Way, SW18 4GL",
+        "googleMapsUrl": "https://www.google.com/maps/place/Beacon+Tower/@51.4559494,-0.1975783,19z/data=!3m1!4b1!4m6!3m5!1s0x48760f66639174e3:0x4a7f9c1e3d56cdc2!8m2!3d51.4559494!4d-0.1975783!16s%2Fg%2F11b7vdxw_m?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D"
+      },
+      "welcomeMessage": "You are invited to celebrate Anna's birthday with an evening of great food, good company, and questionable decisions. We've put together a special menu and some light entertainment.\n\nChef Kacpére will be preparing the food, and the event will be held at the prestigious Le Château de Wandsworth — conveniently located a safe distance from Wandsworth Prison.\n\nPlease arrive on time, dress to impress, and bring a bottle of your favourite alcohol for us all to share.",
       "schedule": [
         {
           "time": "19:00",
@@ -37,100 +42,45 @@
       ],
       "games": [
         {
-          "name": "Murder Mystery Dinner",
-          "description": "Get ready for an evening of intrigue and deception! Each guest will receive a character card with a secret identity. Someone among us is a murderer, and it's up to you to figure out who before the night ends. Clues will be revealed throughout the evening. Pay attention to conversations, watch for suspicious behavior, and don't trust anyone too quickly!"
+          "name": "Identity Card Ice Breaker",
+          "description": "Upon arrival, each guest will receive a special identity card with a unique name and character. Use these cards to introduce yourselves and break the ice. Can you guess who's who?",
+          "hasIdentityCards": true
         },
         {
-          "name": "Two Truths and a Lie",
-          "description": "A classic icebreaker with a twist! Each person shares three statements about themselves - two true and one false. The group must guess which statement is the lie. Prepare your most convincing poker face!"
+          "name": "Secret Hitler",
+          "description": "A social deduction game of political intrigue and betrayal. Players are secretly divided into liberals and fascists. The liberals are trying to pass liberal policies and assassinate Hitler. The fascists are trying to elect Hitler as chancellor and enact fascist policies. Trust no one."
         }
       ],
-      "courses": [
-        {
-          "name": "Aperitif",
-          "dish": "Oysters Rockefeller",
-          "description": "Fresh oysters, spinach, parmesan, anise liqueur"
-        },
-        {
-          "name": "Soup",
-          "dish": "Lobster Bisque",
-          "description": "Cognac, cream, tarragon"
-        },
-        {
-          "name": "Entrée",
-          "dish": "Duck Confit",
-          "description": "Crispy duck leg, orange gastrique, microgreens"
-        },
-        {
-          "name": "Main Course",
-          "dish": "Venison Wellington",
-          "description": "Herb-crusted venison loin, wild mushroom duxelles, port wine sauce"
-        },
-        {
-          "name": "Side",
-          "dish": "Gratin Dauphinois",
-          "description": "Thinly sliced potatoes, cream, garlic, gruyère"
-        },
-        {
-          "name": "Dessert",
-          "dish": "Chocolate Fondant",
-          "description": "Molten chocolate cake, vanilla bean ice cream"
-        }
-      ],
-      "drinks": [
-        {
-          "category": "Welcome Cocktails",
-          "items": [
-            {
-              "name": "French 75",
-              "description": "Gin, lemon, champagne"
-            },
-            {
-              "name": "Aperol Spritz",
-              "description": "Aperol, prosecco, soda"
-            }
-          ]
-        },
-        {
-          "category": "Wines",
-          "items": [
-            {
-              "name": "Chablis Premier Cru",
-              "description": "White Burgundy, oysters & lobster"
-            },
-            {
-              "name": "Châteauneuf-du-Pape",
-              "description": "Red Rhône, duck & venison"
-            }
-          ]
-        },
-        {
-          "category": "Digestifs",
-          "items": [
-            {
-              "name": "Cognac XO",
-              "description": "Fine aged brandy"
-            },
-            {
-              "name": "Limoncello",
-              "description": "Italian lemon liqueur"
-            }
-          ]
-        },
-        {
-          "category": "Non-Alcoholic",
-          "items": [
-            {
-              "name": "Elderflower Spritz",
-              "description": "Elderflower, sparkling water, mint"
-            },
-            {
-              "name": "Fresh Juices",
-              "description": "Orange, apple, cranberry"
-            }
-          ]
-        }
-      ]
+      "menu": {
+        "type": "taco",
+        "sections": [
+          {
+            "title": "1. PICK YOUR PROTEIN",
+            "items": ["Pulled Pork", "Chicken Tinga", "Cauliflower + Beans"]
+          },
+          {
+            "title": "2. ADD CRUNCH",
+            "items": ["Cabbage", "Mango Slaw", "Pickled Onions"]
+          },
+          {
+            "title": "3. ADD FLAVOUR",
+            "items": [
+              "Chimichurri",
+              "Salsa Roja",
+              "Salsa Verde",
+              "Chipotle Mayo"
+            ]
+          },
+          {
+            "title": "4. FINISH STRONG",
+            "items": ["Queso", "Avocado", "Lime", "Jalapeño", "Pineapple"]
+          },
+          {
+            "title": "5. SIDE UP",
+            "items": ["Corn Ribs", "Rice", "Beans"]
+          }
+        ]
+      }
     }
   ]
 }
