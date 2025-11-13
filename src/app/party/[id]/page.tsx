@@ -128,8 +128,17 @@ export default async function PartyMainPage({
         <div className="space-y-8">
           {/* Welcome Message and Dress Code */}
           <div className="border-2 border-current p-8 space-y-6">
-            <div className="text-center">
-              <p className="text-lg leading-relaxed">{party.welcomeMessage}</p>
+            <div className="text-center space-y-4">
+              {party.welcomeMessage.split("\n\n").map((paragraph, index) => (
+                <p key={index} className="text-lg leading-relaxed">
+                  {paragraph.split(/(\*\*.*?\*\*)/).map((part, i) => {
+                    if (part.startsWith("**") && part.endsWith("**")) {
+                      return <strong key={i}>{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  })}
+                </p>
+              ))}
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 pt-4 border-t border-current">
               <div className="flex items-center gap-3">

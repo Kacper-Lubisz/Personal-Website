@@ -2,48 +2,59 @@
   "parties": [
     {
       "id": "annas_birthday_2025",
-      "title": "Anna's Birthday Dinner",
-      "date": "November 2025",
+      "title": "Anna's Birthday",
+      "date": "22 November 2025",
       "releaseDate": "2025-11-22",
-      "photoAlbumUrl": "",
+      "photoAlbumUrl": "https://photos.app.goo.gl/sDKLhyjFt9d1D9iP6",
       "dressCode": "Black Tie",
       "location": {
         "name": "Le Château de Wandsworth",
         "address": "43 Beacon Tower, 1 Spectrum Way, SW18 4GL",
         "googleMapsUrl": "https://www.google.com/maps/place/Beacon+Tower/@51.4559494,-0.1975783,19z/data=!3m1!4b1!4m6!3m5!1s0x48760f66639174e3:0x4a7f9c1e3d56cdc2!8m2!3d51.4559494!4d-0.1975783!16s%2Fg%2F11b7vdxw_m?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D"
       },
-      "welcomeMessage": "You are invited to celebrate Anna's birthday with an evening of great food, good company, and questionable decisions. We've put together a special menu and some light entertainment.\n\nChef Kacpére will be preparing the food, and the event will be held at the prestigious Le Château de Wandsworth — conveniently located a safe distance from Wandsworth Prison.\n\nPlease arrive on time, dress to impress, and bring a bottle of your favourite alcohol for us all to share.",
+      "welcomeMessage": "You are invited to celebrate Anna's birthday with an evening of great food, good company, and questionable decisions. We've put together a special menu and some light entertainment.\n\n**Please arrive on time and dress to impress.**\n\nChef Kacpére will be preparing the food, and the event will be held at the prestigious Le Château de Wandsworth — conveniently located a safe distance from Wandsworth Prison.\n\n**Please bring a bottle of your favourite alcohol for us all to share.**",
+      "scheduleNote": "Please arrive on time! The evening has been carefully planned and we want to make sure everyone can enjoy the full experience together.",
       "schedule": [
         {
-          "time": "19:00",
-          "activity": "Guest Arrival & Welcome Drinks",
+          "time": "18:00",
+          "activity": "Guest Arrival",
           "hideUntilReleased": false
         },
         {
-          "time": "19:30",
-          "activity": "Dinner Begins",
+          "time": "18:05",
+          "activity": "Welcome Drinks & Nibbles",
           "hideUntilReleased": true
         },
         {
-          "time": "21:00",
-          "activity": "Party Games",
+          "time": "18:05",
+          "activity": "The Hidden Agenda Game Begins",
           "hideUntilReleased": true
         },
         {
-          "time": "22:30",
-          "activity": "Dessert Service",
+          "time": "19:00",
+          "activity": "Main Course",
+          "hideUntilReleased": true
+        },
+        {
+          "time": "21:30",
+          "activity": "Games Continued",
+          "hideUntilReleased": true
+        },
+        {
+          "time": "22:00",
+          "activity": "Debauchery Commences",
           "hideUntilReleased": true
         },
         {
           "time": "23:15",
-          "activity": "Depart for Club",
+          "activity": "Depart for Boogie",
           "hideUntilReleased": false
         }
       ],
       "games": [
         {
-          "name": "Identity Card Ice Breaker",
-          "description": "Upon arrival, each guest will receive a special identity card with a unique name and character. Use these cards to introduce yourselves and break the ice. Can you guess who's who?",
+          "name": "Hidden Agenda Game",
+          "description": "Each guest will receive a secret identity card with a hidden agenda to complete throughout the evening. Mingle, scheme, and work towards your mysterious goal without being discovered. Will you achieve your objective?",
           "hasIdentityCards": true
         },
         {
@@ -55,29 +66,32 @@
         "type": "taco",
         "sections": [
           {
-            "title": "1. PICK YOUR PROTEIN",
-            "items": ["Pulled Pork", "Chicken Tinga", "Cauliflower + Beans"]
+            "title": "STEP 1 – BASE & PROTEIN",
+            "subtitle": "Tortilla +",
+            "items": ["Pulled Pork Carnitas", "Chicken Tinga", "Tikka Paneer"]
           },
           {
-            "title": "2. ADD CRUNCH",
-            "items": ["Cabbage", "Mango Slaw", "Pickled Onions"]
-          },
-          {
-            "title": "3. ADD FLAVOUR",
+            "title": "STEP 2 – VEG & CRUNCH",
             "items": [
-              "Chimichurri",
-              "Salsa Roja",
-              "Salsa Verde",
-              "Chipotle Mayo"
+              "Cabbage",
+              "Mango Slaw",
+              "Pickled Onions",
+              "Tomato",
+              "Coriander",
+              "Lime"
             ]
           },
           {
-            "title": "4. FINISH STRONG",
-            "items": ["Queso", "Avocado", "Lime", "Jalapeño", "Pineapple"]
-          },
-          {
-            "title": "5. SIDE UP",
-            "items": ["Corn Ribs", "Rice", "Beans"]
+            "title": "STEP 3 – SAUCES, CHEESE & EXTRAS",
+            "items": [
+              "Salsa Roja",
+              "Salsa Verde",
+              "Chimichurri",
+              "Sour Cream",
+              "Chipotle Mayo",
+              "Jalapeños",
+              "Avocado"
+            ]
           }
         ]
       }
