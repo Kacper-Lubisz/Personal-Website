@@ -68,29 +68,235 @@
           {
             "title": "STEP 1 – BASE & PROTEIN",
             "subtitle": "Tortilla +",
-            "items": ["Pulled Pork Carnitas", "Chicken Tinga", "Tikka Paneer"]
+            "items": [
+              {
+                "name": "Pulled Pork Carnitas",
+                "ingredients": "Pork shoulder, orange, lime, garlic, cumin, smoked paprika, chipotle"
+              },
+              {
+                "name": "Chicken Tinga",
+                "ingredients": "Chicken thighs, tomato, onion, chipotle, garlic, oregano"
+              },
+              {
+                "name": "Ginger-Lime Paneer",
+                "ingredients": "Paneer, coriander, green chilli, garlic, ginger, lime, yogurt"
+              }
+            ]
           },
           {
             "title": "STEP 2 – VEG & CRUNCH",
             "items": [
-              "Cabbage",
-              "Mango Slaw",
-              "Pickled Onions",
-              "Tomato",
-              "Coriander",
-              "Lime"
+              {
+                "name": "Cabbage",
+                "ingredients": "Shredded white or red cabbage"
+              },
+              {
+                "name": "Mango Slaw",
+                "ingredients": "Mango, red cabbage, red onion, lime, chilli, honey"
+              },
+              {
+                "name": "Pickled Onions",
+                "ingredients": "Red onion, vinegar, sugar, salt"
+              },
+              { "name": "Tomato", "ingredients": "Fresh diced tomato" },
+              { "name": "Coriander", "ingredients": "Fresh coriander leaves" },
+              { "name": "Lime", "ingredients": "Fresh lime wedges" }
             ]
           },
           {
             "title": "STEP 3 – SAUCES, CHEESE & EXTRAS",
             "items": [
-              "Salsa Roja",
-              "Salsa Verde",
-              "Chimichurri",
-              "Sour Cream",
-              "Chipotle Mayo",
-              "Jalapeños",
-              "Avocado"
+              {
+                "name": "Salsa Roja",
+                "ingredients": "Tomatoes, onion, garlic, chipotle, cumin, smoked paprika, vinegar"
+              },
+              {
+                "name": "Salsa Verde",
+                "ingredients": "Tomatillos, onion, jalapeños, garlic, coriander, lime"
+              },
+              {
+                "name": "Chimichurri",
+                "ingredients": "Parsley, coriander, garlic, red chilli, red wine vinegar, olive oil, oregano"
+              },
+              { "name": "Sour Cream", "ingredients": "Sour cream or crema" },
+              {
+                "name": "Chipotle Mayo",
+                "ingredients": "Mayonnaise, chipotle paste, lime juice"
+              },
+              {
+                "name": "Jalapeños",
+                "ingredients": "Fresh or pickled jalapeños"
+              },
+              {
+                "name": "Avocado",
+                "ingredients": "Fresh avocado slices or guacamole"
+              }
+            ]
+          }
+        ],
+        "recipes": [
+          {
+            "name": "Pulled Pork Carnitas",
+            "color": "#8B4513",
+            "ingredients": [
+              "1.5 kg boneless pork shoulder",
+              "2 large onions, sliced",
+              "6 garlic cloves, crushed",
+              "Juice of 2 oranges",
+              "Juice of 2 limes",
+              "2 tsp ground cumin",
+              "2 tsp smoked paprika",
+              "2 tsp dried oregano",
+              "1.5 tbsp chipotle paste",
+              "2 tsp salt",
+              "1 tsp black pepper",
+              "250 ml chicken stock",
+              "2 tbsp neutral oil"
+            ],
+            "method": [
+              "Preheat oven to 150°C (or use a slow cooker on LOW).",
+              "Season pork chunks with salt and pepper.",
+              "In a large ovenproof pot, heat oil and brown pork on all sides. Remove to a plate.",
+              "In the same pot, add onions and cook until softened. Add garlic, cumin, smoked paprika, oregano, chipotle paste; cook 1–2 minutes.",
+              "Return pork to the pot. Add orange juice, lime juice and stock.",
+              "Cover and cook in the oven for 3–4 hours until very tender.",
+              "Shred the pork in the cooking juices.",
+              "Before serving, spread on a tray and grill briefly to crisp edges."
+            ]
+          },
+          {
+            "name": "Chicken Tinga",
+            "color": "#DC143C",
+            "ingredients": [
+              "1.2 kg boneless, skinless chicken thighs",
+              "2 large onions (1 sliced, 1 chopped)",
+              "4 garlic cloves, minced",
+              "2 × 400 g tins chopped tomatoes",
+              "2 tbsp chipotle paste",
+              "2 tsp dried oregano",
+              "1 tsp ground cumin",
+              "1 tsp smoked paprika",
+              "2 tsp salt",
+              "½ tsp black pepper",
+              "1 tbsp red wine vinegar",
+              "250 ml chicken stock",
+              "2 tbsp neutral oil"
+            ],
+            "method": [
+              "Heat oil and cook sliced onion until soft and browned.",
+              "Brown chicken thighs lightly on both sides. Remove to a plate.",
+              "Add chopped onion and garlic, cook until softened.",
+              "Add chipotle paste, oregano, cumin, smoked paprika; cook 1–2 minutes.",
+              "Add tomatoes, vinegar and stock. Simmer 5–10 minutes.",
+              "Return chicken to pan, cover and simmer for 25–30 minutes.",
+              "Shred chicken and return to sauce. Adjust seasoning."
+            ]
+          },
+          {
+            "name": "Ginger-Lime Paneer",
+            "color": "#228B22",
+            "ingredients": [
+              "600 g paneer, cut into cubes",
+              "1 large bunch coriander",
+              "1 green chilli",
+              "3 garlic cloves",
+              "2-inch ginger",
+              "Juice of 2 limes",
+              "3 tbsp yogurt",
+              "2 tbsp oil",
+              "1 tsp salt",
+              "1 tbsp honey (optional)"
+            ],
+            "method": [
+              "Blend coriander, green chilli, garlic, ginger, lime juice, yogurt, oil, salt, and honey into a smooth marinade.",
+              "Gently toss paneer cubes in the marinade.",
+              "Marinate for 30 minutes up to 4 hours.",
+              "Preheat oven to 200°C. Line a tray with baking paper.",
+              "Spread paneer in a single layer and roast for 15–20 minutes, turning once.",
+              "Transfer to serving dish with any remaining marinade."
+            ]
+          },
+          {
+            "name": "Mango Slaw",
+            "color": "#FFD700",
+            "ingredients": [
+              "1 small red cabbage, finely shredded",
+              "2 ripe mangoes, cut into thin strips",
+              "1 small red onion, finely sliced",
+              "1 fresh red chilli, finely chopped",
+              "Juice of 2 limes",
+              "2 tbsp olive oil",
+              "1 tbsp honey",
+              "½ tsp salt"
+            ],
+            "method": [
+              "Shred cabbage and put in a large bowl.",
+              "Add mango, red onion, and chilli.",
+              "Mix lime juice, oil, honey, and salt.",
+              "Pour dressing over slaw, toss well.",
+              "Chill for 30–60 minutes before serving."
+            ]
+          },
+          {
+            "name": "Salsa Roja",
+            "color": "#B22222",
+            "ingredients": [
+              "2 × 400 g tins chopped tomatoes",
+              "1 medium onion, roughly chopped",
+              "3 garlic cloves",
+              "1.5 tbsp chipotle paste",
+              "1 tsp ground cumin",
+              "1 tsp smoked paprika",
+              "2 tbsp red wine vinegar",
+              "1 tsp salt",
+              "1 tbsp neutral oil"
+            ],
+            "method": [
+              "Heat oil, add onion and garlic, cook until golden.",
+              "Add chipotle paste, cumin, smoked paprika; cook 1–2 minutes.",
+              "Add tomatoes and vinegar. Simmer 15–20 minutes.",
+              "Blend for smoother salsa or leave chunky.",
+              "Season to taste. Serve cold or at room temp."
+            ]
+          },
+          {
+            "name": "Salsa Verde",
+            "color": "#7CFC00",
+            "ingredients": [
+              "2 × 400 g tins tomatillos, drained",
+              "1 medium onion, roughly chopped",
+              "2 jalapeños or green chillies",
+              "2 garlic cloves",
+              "1 small bunch fresh coriander",
+              "Juice of 2 limes",
+              "1 tsp salt"
+            ],
+            "method": [
+              "Optionally char chillies in a dry pan until blistered.",
+              "Blend tomatillos, onion, chillies, garlic, coriander, lime juice and salt.",
+              "Adjust salt and lime to taste.",
+              "Chill before serving."
+            ]
+          },
+          {
+            "name": "Chimichurri",
+            "color": "#32CD32",
+            "ingredients": [
+              "1 large bunch flat-leaf parsley, finely chopped",
+              "1 small bunch fresh coriander, finely chopped",
+              "3–4 garlic cloves, very finely chopped",
+              "½ fresh red chilli, finely chopped",
+              "6 tbsp red wine vinegar",
+              "180 ml olive oil",
+              "1 tsp dried oregano",
+              "1 tsp salt",
+              "½ tsp black pepper"
+            ],
+            "method": [
+              "Finely chop herbs, garlic and chilli; put in a bowl.",
+              "Add vinegar, olive oil, oregano, salt, and pepper.",
+              "Stir well. Leave 30–60 minutes to meld flavours.",
+              "Stir before serving."
             ]
           }
         ]

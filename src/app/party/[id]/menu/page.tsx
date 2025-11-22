@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import partiesData from "@/data/menus.json";
-import { Clock } from "@phosphor-icons/react/dist/ssr";
+import { Clock, CookingPot } from "@phosphor-icons/react/dist/ssr";
 import PreserveParamsLink from "@/components/PreserveParamsLink";
 import PartyPageWrapper from "@/components/PartyPageWrapper";
 import PartyPageHeader from "@/components/PartyPageHeader";
@@ -13,15 +13,28 @@ type Course = {
   description: string;
 };
 
+type TacoMenuItem = {
+  name: string;
+  ingredients: string;
+};
+
 type TacoMenuSection = {
   title: string;
   subtitle?: string;
-  items: string[];
+  items: TacoMenuItem[];
+};
+
+type TacoRecipe = {
+  name: string;
+  color: string;
+  ingredients: string[];
+  method: string[];
 };
 
 type TacoMenu = {
   type: "taco";
   sections: TacoMenuSection[];
+  recipes?: TacoRecipe[];
 };
 
 type TraditionalMenu = {
@@ -211,11 +224,16 @@ export default async function MenuPage({
                   {section.items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="text-center py-2 px-4 border border-current flex-shrink-0"
+                      className="group relative text-center py-2 px-4 border border-current flex-shrink-0 cursor-help"
+                      title={item.ingredients}
                     >
                       <span className="text-base font-medium whitespace-nowrap">
-                        {item}
+                        {item.name}
                       </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 w-48 text-center">
+                        {item.ingredients}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-black"></div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -290,6 +308,22 @@ export default async function MenuPage({
     <div className="min-h-screen flex items-center justify-center p-4 md:p-8 print:p-0 print:block print:min-h-screen">
       <div className="w-full max-w-4xl">
         <TentCardMenu page1={page1Content} page2={page2Content} />
+      </div>
+
+      {/* Hidden cooking button - same location as tent preview control */}
+      <div className="hidden md:block print:hidden fixed top-4 right-4 z-50">
+        <div className="group">
+          <div className="w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute top-0 right-0 bg-[var(--background)] border-2 border-current p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+            <PreserveParamsLink
+              href={`/party/${id}/menu/cooking`}
+              className="inline-flex items-center gap-2 py-2 px-4 border border-current hover:opacity-60 transition-opacity text-sm whitespace-nowrap"
+            >
+              <CookingPot size={18} />
+              View Recipes
+            </PreserveParamsLink>
+          </div>
+        </div>
       </div>
     </div>
   );
